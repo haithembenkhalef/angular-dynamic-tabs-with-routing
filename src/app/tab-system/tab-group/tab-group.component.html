@@ -1,0 +1,13 @@
+<div class="holder">
+    <div class="tab-bar">
+        <i class="pi pi-chevron-left mx-1" (click)="scrollLeft()"></i>
+
+        <ul #scroller class="container"> 
+           <ng-template #vcrTab></ng-template>
+        </ul>
+
+        <i class="pi pi-chevron-right mx-1" (click)="scrollRight()"></i>
+        <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-sm mx-3" (click)="addTab()"></button>
+    </div>
+</div>
+
