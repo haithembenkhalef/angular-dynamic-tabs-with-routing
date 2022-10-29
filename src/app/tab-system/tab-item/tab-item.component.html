@@ -1,0 +1,9 @@
+
+<div class="tab-item-container" (click)="this.click.emit($event)">
+    <li [className]="tab.active ? 'tab-item-active' : 'tab-item'">
+        <span class="left-container"><i class="pi pi-bolt"></i></span>
+        <span class="right-container" (click)="this.close.emit($event)"><i class="pi pi-times"></i></span>
+        <div class="center-container">{{this.tab.label}} : {{this.tab.id}} </div>
+    </li>
+</div>
+
