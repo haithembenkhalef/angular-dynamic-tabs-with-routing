@@ -22,7 +22,9 @@ export class DesktopComponent implements OnInit, OnDestroy, AfterViewInit {
     private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    //init tab id and get corresponding content
     this.tabId = this.route.snapshot.params['id'];
+    //detach content before component is destroyed otherwise we can't insert it again.
     this.subscription = this.manager.onTabActivate.subscribe((data) => this.disableAll());
     let tabRefContent = this.manager.getTabContentByID(this.tabId);
     if (tabRefContent) {
@@ -32,17 +34,17 @@ export class DesktopComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    //Insert content directly or create new when new tab is generated.
     this.generateContent();
   }
 
   generateContent() {
-    if (this.content) {
-      console.log(this.content.hostView)
+    if (this.content) 
       this.vcr.insert(this.content.hostView);
-    }
     else {
       this.content = this.vcr.createComponent(TabContentComponent);
       this.content.instance.content = this.tab.instance.tab.label + " : " + this.tab.instance.tab.id;
+      //force detect changes since we updating UI inside AfterViewInit hook.
       this.changeDetectorRef.detectChanges();
       this.manager.addRef(this.tab, this.content);
     }
