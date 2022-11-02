@@ -1,7 +1,11 @@
 
 # angular-dynamic-tabs-with-routing
 
-# NgprimeTest
+This is an exemple of how to create tabs systeme with angular.
+
+The tabs are dynamique which means it is possible to create them based on a menu with dynamic data from a backend in this example we just crate thm using a '+' button.
+
+The key feature here is that each tab has it own route based on the tab ID.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
