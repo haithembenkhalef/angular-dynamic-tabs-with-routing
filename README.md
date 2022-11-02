@@ -1,9 +1,9 @@
 
 # angular-dynamic-tabs-with-routing
 
-This is an exemple of how to create tabs systeme with angular.
+This is an example of how to create a tabs system with angular.
 
-The tabs are dynamique which means it is possible to create them based on a menu with dynamic data from a backend in this example we just crate thm using a '+' button.
+The tabs are dynamique which means that it is possible to create them based on a menu with dynamic data from a backend, in this example we just create them using a '+' button.
 
 The key feature here is that each tab has it own route based on the tab ID.
 
